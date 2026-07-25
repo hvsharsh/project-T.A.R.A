@@ -1,0 +1,16 @@
+# Sensitive Environment Variables (API Keys)
+.env
+
+# Python Bytecode & Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Streamlit Local Config & Secrets
+.streamlit/secrets.toml
+
+# OS System Files
+.DS_Store
+Thumbs.db
