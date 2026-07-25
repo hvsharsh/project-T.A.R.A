@@ -1,6 +1,10 @@
 # T.A.R.A - AI Tactical Strategy Agent 🛡️
 > **O2I Defense War Mission Simulator | Automated Military Battle Planning Engine**
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit%20Cloud-red?style=for-the-badge&logo=streamlit)](https://project-tara-app.streamlit.app/)
+
+👉 **Live Web App Shareable Link:** [https://project-tara-app.streamlit.app/](https://project-tara-app.streamlit.app/)
+
 T.A.R.A (Tactical AI Strategy Agent) is an advanced defense battle simulation assistant built on the O2I Framework. It analyzes user-provided battlefield scenarios, operational assets, and environmental conditions to generate classified, structured military engagement strategies, spatial routes (MGRS coordinates), electronic warfare allocations (Radars, IFF, ESM, CSM), and contingency alternatives.
 
 ---
