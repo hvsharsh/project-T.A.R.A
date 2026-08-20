@@ -2,7 +2,7 @@
 app.py
 
 Main Streamlit Application for AI Tactical Strategy Agent (project T.A.R.A)
-for Defense War Mission Simulator (O2I Framework).
+for Defense War Mission Simulator (Tactical AI Framework).
 
 Features:
 - 100% native Streamlit components (clean, minimalist layout)
@@ -19,6 +19,7 @@ Version: 2.4.0
 import os
 import re
 from datetime import datetime, timezone
+from typing import Tuple, Dict, Any, Optional, List
 import streamlit as st
 from dotenv import load_dotenv
 
@@ -30,7 +31,7 @@ load_dotenv()
 
 # Page configuration
 st.set_page_config(
-    page_title="T.A.R.A - AI Tactical Strategy Agent | O2I Simulator",
+    page_title="T.A.R.A - AI Tactical Strategy Agent | Tactical AI Simulator",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -62,7 +63,7 @@ def update_preset_scenario_callback() -> None:
         st.session_state["scenario_text_widget"] = SAMPLE_SCENARIOS[selected_preset]
 
 
-def validate_scenario_briefing(text: str) -> tuple[bool, str]:
+def validate_scenario_briefing(text: str) -> Tuple[bool, str]:
     """Validates user scenario briefing text to ensure meaningful tactical input."""
     cleaned = text.strip()
     if len(cleaned) < 15:
@@ -138,7 +139,7 @@ def main() -> None:
 
         st.divider()
         st.markdown(
-            "**O2I Terminology Specs:**\n"
+            "**Tactical AI Terminology Specs:**\n"
             "- **Blue Team** vs **Red Team**\n"
             "- Sensors: **Radars**, **IFF**, **ESM**, **CSM**\n"
             "- Tactics: Engagement Policy, Detection Mode, Formation Type\n"
@@ -147,7 +148,7 @@ def main() -> None:
 
     # Main Header
     st.title("T.A.R.A - AI TACTICAL STRATEGY AGENT")
-    st.caption("O2I DEFENSE WAR MISSION SIMULATION ENGINE | AUTOMATED MILITARY BATTLE PLANNING")
+    st.caption("TACTICAL AI DEFENSE WAR MISSION SIMULATION ENGINE | AUTOMATED MILITARY BATTLE PLANNING")
 
     # Quick Scenario Selector
     st.subheader("1. Select or Enter Mission Scenario")
@@ -178,7 +179,7 @@ def main() -> None:
             st.warning(val_msg)
             return
 
-        with st.spinner("Processing tactical parameters... Running O2I Strategy Simulation..."):
+        with st.spinner("Processing tactical parameters... Running Tactical AI Strategy Simulation..."):
             engine = TacticalAIEngine(api_key=api_key_input, provider=provider_choice)
             
             result: TacticalStrategyResult = engine.generate_strategy(
@@ -204,11 +205,11 @@ def main() -> None:
         active_red = st.session_state.get("active_red_count", red_count)
 
         st.divider()
-        st.header("O2I MISSION TACTICAL ANALYSIS & BLUEPRINT")
+        st.header("TACTICAL AI MISSION TACTICAL ANALYSIS & BLUEPRINT")
 
         # Surfacing Error Diagnostics if API failed or fell back to Offline Mode
         if "Offline" in result.provider_used:
-            st.info("Engine Telemetry Notice: Running under O2I Offline Tactical Rule Engine.")
+            st.info("Engine Telemetry Notice: Running under Tactical AI Offline Rule Engine.")
             if result.error_details:
                 with st.expander("View API Error Diagnostics & Failure Log", expanded=True):
                     st.error(f"Diagnostic Error Trace:\n```text\n{result.error_details}\n```")
@@ -237,7 +238,7 @@ def main() -> None:
         elif "groq" in raw_prov:
             clean_model_name = "Groq AI"
         elif "offline" in raw_prov or "rule" in raw_prov:
-            clean_model_name = "O2I Rule Engine"
+            clean_model_name = "Tactical AI Rule Engine"
         else:
             clean_model_name = result.provider_used.split()[0]
 

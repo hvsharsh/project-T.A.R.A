@@ -1,9 +1,9 @@
 """
 ai_engine.py
 
-AI Tactical Strategy Engine for Defense War Mission Simulator (O2I Framework).
+AI Tactical Strategy Engine for Defense War Mission Simulator (Tactical AI Framework).
 Handles LLM API integration (Google Gemini / Groq Llama-3.3), system prompting,
-strict O2I terminology enforcement, structured response parsing with Markdown formatting,
+strict Tactical AI terminology enforcement, structured response parsing with Markdown formatting,
 SDK & REST fallback layers, detailed error surfacing, and offline tactical simulation.
 
 Author: Lead AI Engineer
@@ -40,10 +40,10 @@ class TacticalStrategyResult:
 
 
 class TacticalAIEngine:
-    """Core AI Tactical Engine powering the O2I Mission Simulator strategy generation."""
+    """Core AI Tactical Engine powering the Tactical AI Mission Simulator strategy generation."""
 
     SYSTEM_PROMPT: str = """
-You are a Chief AI Tactical Strategy Officer for the Defense War Mission Simulator (O2I DRDO Framework).
+You are a Chief AI Tactical Strategy Officer for the Defense War Mission Simulator (Tactical AI Framework).
 Your role is to analyze battlefield scenarios and formulate coherent, mission-critical strategies with tactical depth.
 
 ═══════════════════════════════════════════════════════════════════
@@ -147,7 +147,7 @@ Before finalizing your response, validate:
 - Be **tactical and precise**: Use military terminology correctly but explain complex concepts
 - Be **analytical not prescriptive**: Show reasoning for every decision
 - Be **scenario-aware**: Adapt intensity and detail to scenario complexity
-- Be **simulator-focused**: Remember outputs feed into O2I Framework mission planning
+- Be **simulator-focused**: Remember outputs feed into Tactical AI Framework mission planning
 - Be **honest about uncertainty**: Flag assumptions and data limitations
 """
 
@@ -199,7 +199,7 @@ Red Team Asset Count: {red_team_count} units
 Assessed Threat Level: {threat_level}
 Environmental & Weather Conditions: {weather_conditions}
 
-Generate the tactical war game strategy adhering strictly to all O2I simulator terminology, section headers, and Markdown bullet formatting rules.
+Generate the tactical war game strategy adhering strictly to all Tactical AI simulator terminology, section headers, and Markdown bullet formatting rules.
 """
         raw_output = ""
         provider_used = "Offline Tactical Simulator"
@@ -235,11 +235,11 @@ Generate the tactical war game strategy adhering strictly to all O2I simulator t
 
         # 3. Fallback to local tactical simulation engine if live APIs failed/unconfigured
         if not raw_output:
-            logger.info("Using local O2I Tactical Simulation Engine (Offline mode).")
+            logger.info("Using local Tactical AI Simulation Engine (Offline mode).")
             raw_output = self._generate_simulated_tactical_output(
                 scenario_text, blue_team_count, red_team_count, threat_level, weather_conditions
             )
-            provider_used = "O2I Tactical Rule Engine (Offline)"
+            provider_used = "Tactical AI Rule Engine (Offline)"
 
         # Parse sections for UI presentation
         parsed = self.parse_tactical_sections(raw_output)
@@ -358,7 +358,7 @@ Generate the tactical war game strategy adhering strictly to all O2I simulator t
             "Content-Type": "application/json"
         }
         
-        models_to_try = ["llama-3.3-70b-versatile", "llama-3.1-8b-instant"]
+        models_to_try = ["llama-3.3-70b-versatile", "llama-3.1-8b-instant", "mixtral-8x7b-32768"]
         last_error = None
 
         for model_name in models_to_try:
@@ -401,7 +401,7 @@ Generate the tactical war game strategy adhering strictly to all O2I simulator t
         threat: str,
         weather: str
     ) -> str:
-        """Generates realistic O2I-compliant tactical output formatted with Markdown bullets when offline."""
+        """Generates realistic Tactical AI-compliant tactical output formatted with Markdown bullets when offline."""
         return f"""
 ### SECTION 1: PRIMARY STRATEGY & OPERATIONAL PLAN
 - **Operational Approach:** Blue Team will execute a coordinated low-altitude stealth penetration against Red Team assets.

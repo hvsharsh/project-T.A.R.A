@@ -1,7 +1,7 @@
 """
 report_generator.py
 
-Automated Military Dossier & Report Generator for O2I Mission Simulator.
+Automated Military Dossier & Report Generator for Tactical AI Mission Simulator.
 Formats tactical scenarios, AI strategies, operational assets, and alternative plans
 into a standardized, classified downloadable military report (Markdown / Text format).
 
@@ -17,8 +17,8 @@ def generate_mission_dossier(
     scenario_input: str,
     raw_ai_output: str,
     parsed_sections: Optional[Dict[str, str]] = None,
-    provider_used: str = "O2I AI Tactical Engine",
-    classification_level: str = "TOP SECRET // NOFORN // O2I SIMULATION ONLY",
+    provider_used: str = "Tactical AI Engine",
+    classification_level: str = "CLASSIFIED // TACTICAL SIMULATION ONLY",
     timestamp: Optional[str] = None
 ) -> str:
     """
@@ -41,10 +41,10 @@ def generate_mission_dossier(
 
     dossier_content = f"""================================================================================
 {classification_level}
-O2I DEFENSE WAR MISSION SIMULATION - TACTICAL STRATEGY DOSSIER
+TACTICAL AI DEFENSE WAR MISSION SIMULATION - TACTICAL STRATEGY DOSSIER
 ================================================================================
 
-DOCUMENT CONTROL NUMBER: DOSSIER-O2I-{utc_now.strftime('%Y%m%d-%H%M%S')}
+DOCUMENT CONTROL NUMBER: DOSSIER-TARA-{utc_now.strftime('%Y%m%d-%H%M%S')}
 GENERATION TIMESTAMP:   {current_time}
 AI STRATEGY ENGINE:     {provider_used}
 SECURITY CLASSIFICATION: {classification_level}

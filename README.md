@@ -1,6 +1,6 @@
 # T.A.R.A - AI Tactical Strategy Agent 🛡️
 
-> **Advanced Defense War Mission Simulator | Automated Military Battle Planning Engine (O2I Framework)**
+> **Advanced Defense War Mission Simulator | Automated Military Battle Planning Engine (Tactical AI Framework)**
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit%20Cloud-red?style=for-the-badge&logo=streamlit)](https://project-tara-app.streamlit.app/)
 [![Python 3.9+](https://img.shields.io/badge/Python-3.9%2B-blue.svg?style=for-the-badge&logo=python)](https://www.python.org/)
@@ -13,7 +13,7 @@
 
 ## 📌 Overview
 
-**T.A.R.A (Tactical AI Strategy Agent)** is an advanced defense battle simulation and tactical decision-support assistant built for dynamic scenario analysis. Operating under defense war mission simulation protocols (O2I Framework), T.A.R.A evaluates mission briefings, operational assets, force imbalances, and environmental constraints to generate comprehensive military engagement strategies.
+**T.A.R.A (Tactical AI Strategy Agent)** is an advanced defense battle simulation and tactical decision-support assistant built for dynamic scenario analysis. Operating under defense war mission simulation protocols (Tactical AI Framework), T.A.R.A evaluates mission briefings, operational assets, force imbalances, and environmental constraints to generate comprehensive military engagement strategies.
 
 Whether planning air defense suppression, coastal infiltration, or armored interdiction, T.A.R.A delivers actionable operational plans, terrain-aware spatial routes (MGRS coordinates), electronic warfare sensor allocations (Radar, IFF, ESM, CSM), risk evaluations, and alternative contingency plans.
 
@@ -126,7 +126,9 @@ The application will open automatically in your browser at `http://localhost:850
 
 ## 📜 License & Disclaimer
 
-This project is developed for defense war simulation research and scenario analysis under the O2I Framework. Distributed under the MIT License.
+This project is developed for defense war simulation research and scenario analysis under the Tactical AI Framework. Distributed under the MIT License.
+
+Disclaimer: T.A.R.A is an open-source educational and simulation tool designed for tactical scenario modeling using public AI APIs.
 
 ---
 
