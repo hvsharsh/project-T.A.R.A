@@ -22,7 +22,7 @@ Whether planning air defense suppression, coastal infiltration, or armored inter
 ## 🌟 Key Features
 
 * **🤖 Multi-Engine AI Routing:**
-  * Native integration with **Google Gemini (`gemini-3.6-flash`)** and **Groq (`llama-3.3-70b-versatile`)**.
+  * Native integration with **Google Gemini (`gemini-2.0-flash`)** and **Groq (`llama-3.3-70b-versatile`)**.
   * Intelligent provider selection ("Auto", "Gemini", "Groq") with automatic fallback logic.
 * **🛡️ Offline Rule Engine Fallback:**
   * Seamless fallback to a deterministic offline tactical simulation engine if live LLM APIs are unconfigured or unavailable.

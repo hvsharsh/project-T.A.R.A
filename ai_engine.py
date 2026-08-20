@@ -260,7 +260,7 @@ Generate the tactical war game strategy adhering strictly to all Tactical AI sim
 
     def _call_gemini_api(self, prompt: str) -> Tuple[str, str]:
         """Call Google Gemini API using SDK or direct REST API fallback across supported models."""
-        models_to_try = ["gemini-3.6-flash", "gemini-3.5-flash", "gemini-flash-latest"]
+        models_to_try = ["gemini-1.5-flash", "gemini-1.5-pro", "gemini-2.0-flash"]
         last_error = None
 
         # Method 1: Try new google-genai SDK across model candidates
@@ -358,7 +358,7 @@ Generate the tactical war game strategy adhering strictly to all Tactical AI sim
             "Content-Type": "application/json"
         }
         
-        models_to_try = ["llama-3.3-70b-versatile", "llama-3.1-8b-instant", "mixtral-8x7b-32768"]
+        models_to_try = ["llama-3.3-70b-versatile", "llama-3.1-70b-versatile", "llama-3.2-3b-preview"]
         last_error = None
 
         for model_name in models_to_try:

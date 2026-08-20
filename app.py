@@ -227,10 +227,12 @@ def main() -> None:
         
         # Concise AI Model Display Name to prevent truncation
         raw_prov = result.provider_used.lower()
-        if "gemini-3.6" in raw_prov:
-            clean_model_name = "Gemini 3.6 Flash"
-        elif "gemini-3.5" in raw_prov:
-            clean_model_name = "Gemini 3.5 Flash"
+        if "gemini-2.0" in raw_prov:
+            clean_model_name = "Gemini 2.0 Flash"
+        elif "gemini-1.5-pro" in raw_prov:
+            clean_model_name = "Gemini 1.5 Pro"
+        elif "gemini-1.5-flash" in raw_prov:
+            clean_model_name = "Gemini 1.5 Flash"
         elif "gemini" in raw_prov:
             clean_model_name = "Google Gemini"
         elif "llama-3.3" in raw_prov:

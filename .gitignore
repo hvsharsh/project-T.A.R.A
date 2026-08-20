@@ -1,6 +1,10 @@
 # Sensitive Environment Variables (API Keys)
 .env
 
+# Virtual Environments
+venv/
+.venv/
+
 # Python Bytecode & Cache
 __pycache__/
 *.pyc
